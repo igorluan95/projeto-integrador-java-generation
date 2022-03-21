@@ -32,16 +32,20 @@ public class CalculadoraHealthyDay {
 				tdee, tdeeFinal, aguaNecessaria, aguaRestante);
 
 		// Início da entrada de dados
-		System.out.println("===================================================");
-		System.out.println("============                           ============");
-		System.out.println("============        HEALTHY DAY        ============");
-		System.out.println("============                           ============");
-		System.out.println("===================================================");
-		System.out.print("\nNome: ");
+		System.out.println("===========================================================================");
+		System.out.println("========================                           ========================");
+		System.out.println("========================        HEALTHY DAY        ========================");
+		System.out.println("========================                           ========================");
+		System.out.println("===========================================================================");
+
+		System.out.println(
+				"\nEsses são dados meralmente informativos.\nDIRIJA-SE ATÉ UM PROFISSIONAL DA SAÚDE PARA INFORMAÇÕES ADEQUADAS PARA VOCÊ.");
+
+		System.out.print("\nInsira seu Nome: ");
 		final String nome1 = sc.next();
 		p.setNome(nome1);
 
-		System.out.println("\nSexo: \n[1] Feminino \n[2] Masculino ");
+		System.out.println("\nInsira deu Sexo: \n[1] Feminino \n[2] Masculino ");
 		sexo = leia.nextInt();
 		while (sexo != 1 & sexo != 2) {
 			System.out.println("Valor inválido! Escolha entre: \n[1] Feminino ou \n[2] Masculino ");
@@ -49,15 +53,15 @@ public class CalculadoraHealthyDay {
 		}
 		p.setSexo(sexo);
 
-		System.out.print("\nIdade: ");
+		System.out.print("\nInsira sua Idade: ");
 		idade = leia.nextInt();
 		p.setIdade(idade);
 
-		System.out.print("\nAltura [cm]: ");
+		System.out.print("\nInsira sua Altura [cm]: ");
 		altura = leia.nextInt();
 		p.setAltura(altura);
 
-		System.out.print("\nPeso [kg]: ");
+		System.out.print("\nInsira seu Peso [kg]: ");
 		peso = leia.nextInt();
 		p.setPeso(peso);
 
@@ -85,7 +89,7 @@ public class CalculadoraHealthyDay {
 		qtdeAgua = leia.nextInt();
 		p.setQtdeAgua(qtdeAgua);
 
-		System.out.print("\nNormalmente, quantas refeições você faz por dia? ");
+		System.out.print("\nInsira quantas refeições você faz por dia: ");
 		qtdeRefeicoes = leia.nextInt();
 		p.setQtdeRefeicoes(qtdeRefeicoes);
 
@@ -137,12 +141,12 @@ public class CalculadoraHealthyDay {
 		Thread.sleep(1000);
 		System.out.println();
 		System.out.println(
-				"====================================================================================================================");
+				"\n====================================================================================================================================================================");
 		System.out.println();
 		System.out.println("SEUS RESULTADOS:");
 		System.out.println();
 		System.out.println(
-				"====================================================================================================================");
+				"====================================================================================================================================================================");
 		System.out.println();
 
 		if (p.getSexo() == 1) {
@@ -150,7 +154,7 @@ public class CalculadoraHealthyDay {
 		} else {
 			System.out.println("Nome: " + p.getNome() + ", " + p.getIdade() + " anos, masculino");
 		}
-		System.out.println("Peso: " + p.getPeso() + " kg | Altura: " + p.getAltura() + " cm");
+		System.out.println("\nPeso: " + p.getPeso() + " kg | Altura: " + p.getAltura() + " cm");
 
 		System.out.println();
 
@@ -161,6 +165,7 @@ public class CalculadoraHealthyDay {
 		} else if (p.getObjetivo() == 3) {
 			System.out.println("Objetivo: GANHAR PESO");
 		}
+		System.out.println();
 
 		if (p.getAtivFisica() == 1) {
 			System.out.println("Nível de atividade: LEVE");
@@ -171,57 +176,93 @@ public class CalculadoraHealthyDay {
 		}
 
 		System.out.println(
-				"\n====================================================================================================================");
+				"\n====================================================================================================================================================================");
 		System.out.println();
 		Thread.sleep(1000);
 
 		if (p.getImc() < 18.5) {
-			System.out.printf("Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
-			System.out.println(" kg/m2. Esse valor está na faixa de MAGREZA (abaixo de 18,5 kg/m2).");
-		} else if (p.getImc() >= 18.5 & p.getImc() <= 24.9) {
-			System.out.printf("Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
-			System.out.println(" kg/m2. Esse valor está na faixa considerada NORMAL (entre 18,5 e 24,9 kg/m2).");
-		} else if (p.getImc() > 25 & p.getImc() <= 29.9) {
-			System.out.printf("Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
-			System.out.println(" kg/m2. Esse valor está na faixa de SOBREPESO (entre 25 e 29,9 kg/m2).");
+			System.out.printf("• Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
+			System.out.println(
+					" kg/m2. Esse valor está na faixa de MAGREZA (abaixo de 18,5 kg/m2).\n Procure ajuda médica com urgência!");
+		} else if (p.getImc() >= 18.5 & p.getImc() < 25) {
+			System.out.printf("• Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
+			System.out.println(
+					" kg/m2. Esse valor está na faixa considerada NORMAL (maior ou igual a 18,5 e menor que 25,0 kg/m2).");
+		} else if (p.getImc() >= 25 & p.getImc() < 30) {
+			System.out.printf("• Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
+			System.out.println(
+					" kg/m2. Esse valor está na faixa de SOBREPESO (maior ou igual a 25,0 e menor que 30,0 kg/m2).\n Procure ajuda médica com urgência!");
 		} else {
-			System.out.printf("Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
-			System.out.println(" kg/m2. Esse valor está na faixa de OBESIDADE (acima de 30 kg/m2).");
+			System.out.printf("• Seu Índice de Massa Corporal (IMC) é %.2f", p.getImc());
+			System.out.println(
+					" kg/m2. Esse valor está na faixa de OBESIDADE (maior ou igual a 30,0 kg/m2).\n Procure ajuda médica com urgência!");
 		}
 
 		System.out.println();
 
-		System.out.println("• Taxa Metabólica Basal (TMB) é: " + p.getTmb() + " kcal");
-		System.out.println("• Gasto Calórico Total Diário (TDEE): " + p.getTdee() + " kcal");
+		System.out.println("• Sua Taxa Metabólica Basal (TMB) é " + p.getTmb() + " kcal");
+		System.out.println();
+
+		System.out.println("• Seu Gasto Calórico Total Diário (TDEE) é " + p.getTdee() + " kcal");
 
 		System.out.println();
 
 		if (p.getObjetivo() == 1) {
-
-			System.out.println(
-					"• Como seu objetivo é PERDER PESO, você deve diminuir seu Gasto Calórico Diário (TDEE) para "
-							+ p.getTdeeFinal() + " kcal.");
-
 			if (p.getImc() < 18.5) {
 				System.out.println(
-						"OBS: Seu Índice de Massa Corporal (IMC) indicou MAGREZA. Recomendamos a busca por uma profissional para melhor acompanhamento.");
+						"• OBS: Seu objetivo é perder peso mas seu Índice de Massa Corporal (IMC) indicou MAGREZA, procure ajuda médica com urgência.");
+			}
+			if (p.getImc() >= 18.5 && p.getImc() < 25) {
+				System.out.println(
+						"• OBS: Seu objetivo é perder peso mas seu Índice de Massa Corporal (IMC) indicou PESO NORMAL. Abaixar seu peso pode te colocar com um valor de IMC que indica MAGREZA, procure ajuda médica para informações mais detalhadas.");
+			}
+
+			if (p.getImc() >= 25) {
+				System.out.println(
+						"• Como seu objetivo é perder peso, você deveria diminuir seu consumo de calorias para "
+								+ p.getTdeeFinal()
+								+ " kcal. Mas antes de fazer isso procure ajuda médica para te auxiliar nesse processo.");
+
 			}
 
 		} else if (p.getObjetivo() == 2) {
+			if (p.getImc() < 18.5) {
+				System.out.println(
+						"• OBS: Seu objetivo é manter peso mas seu Índice de Massa Corporal (IMC) indicou MAGREZA, procure ajuda médica com urgência.");
+			}
+			if (p.getImc() >= 25 && p.getImc() < 30) {
+				System.out.println(
+						"• OBS: Seu objetivo é manter peso mas seu Índice de Massa Corporal (IMC) indicou SOBREPESO, procure ajuda médica com urgência.");
+			}
+			if (p.getImc() >= 30) {
+				System.out.println(
+						"• OBS: Seu objetivo é manter peso mas seu Índice de Massa Corporal (IMC) indicou OBESIDADE, procure ajuda médica com urgência.");
+			}
 
-			System.out.println(
-					"• Como seu objetivo é MANTER O PESO, você deve manter seu Gasto Calórico Diário (TDEE) em "
-							+ p.getTdeeFinal() + " kcal.");
+			if (p.getImc() >= 18.5 && p.getImc() < 25) {
+				System.out.println("• Como seu objetivo é manter peso, você deveria manter seu consumo de calorias em "
+						+ p.getTdeeFinal() + " kcal. Procure ajuda médica para informações mais detalhadas.");
+			}
 
 		} else if (p.getObjetivo() == 3) {
 
-			System.out.println(
-					"• Como seu objetivo é GANHAR PESO, você deve aumentar seu Gasto Calórico Diário (TDEE) para "
-							+ p.getTdeeFinal() + " kcal.");
-
-			if (p.getImc() > 30) {
+			if (p.getImc() >= 18.5 && p.getImc() < 25) {
 				System.out.println(
-						"OBS: Seu Índice de Massa Corporal (IMC) indicou OBESIDADE. Recomendamos a busca por uma profissional para melhor acompanhamento.");
+						"• OBS: Seu objetivo é ganhar peso mas seu Índice de Massa Corporal (IMC) indicou PESO NORMAL. Aumentar seu peso pode te colocar com um valor de IMC que indica SOBREPRESO, procure ajuda médica com urgência.");
+			}
+			if (p.getImc() >= 30) {
+				System.out.println(
+						"OBS: Seu objetivo é ganhar peso mas seu Índice de Massa Corporal (IMC) indicou OBESIDADE. Não recomendamos que aumente seu peso, procure ajuda médica com urgência.");
+			}
+			if (p.getImc() >= 25 && p.getImc() < 30) {
+				System.out.println(
+						"• OBS: Seu objetivo é ganhar peso mas seu Índice de Massa Corporal (IMC) indicou SOBREPESO. Aumentar seu peso pode te colocar com um valor de IMC que indica OBESIDADE, procure ajuda médica com urgência.");
+			}
+			if (p.getImc() < 18.5) {
+				System.out.println(
+						"• Como seu objetivo é ganhar peso, você deveria aumentar seu consumo de calorias para "
+								+ p.getTdeeFinal()
+								+ " kcal. Mas antes de fazer isso procure ajuda médica para te auxiliar nesse processo.");
 			}
 
 		}
@@ -242,17 +283,17 @@ public class CalculadoraHealthyDay {
 
 		if (p.getQtdeRefeicoes() > 6) {
 			System.out.println("• Você faz " + p.getQtdeRefeicoes()
-					+ " refeições por dia, o que está ACIMA do recomendado (5 a 6 refeições).");
+					+ " refeições por dia, o que está ACIMA do recomendado pelo Guia Alimentar Para a População Brasileira (5 a 6 refeições).");
 		} else if (p.getQtdeRefeicoes() >= 5) {
 			System.out.println("• Você faz " + p.getQtdeRefeicoes()
-					+ " refeições por dia, o que está DENTRO do recomendado (5 a 6 refeições).");
+					+ " refeições por dia, o que está DENTRO do recomendado pelo Guia Alimentar Para a População Brasileira (5 a 6 refeições).");
 		} else {
 			System.out.println("• Você faz " + p.getQtdeRefeicoes()
-					+ " refeições por dia, o que está ABAIXO do recomendado (5 a 6 refeições).");
+					+ " refeições por dia, o que está ABAIXO do recomendado pelo Guia Alimentar Para a População Brasileira (5 a 6 refeições).");
 		}
 
 		System.out.println(
-				"\n====================================================================================================================");
+				"\n====================================================================================================================================================================");
 		System.out.println();
 		Thread.sleep(1000);
 
@@ -271,12 +312,13 @@ public class CalculadoraHealthyDay {
 				+ "Disponível em: http://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf");
 
 		System.out.println(
-				"\n====================================================================================================================");
+				"\n====================================================================================================================================================================");
 		Thread.sleep(1000);
-		System.out
-				.println("\nPara informações mais precisas e acompanhamento adequado, procure profissionais da saúde.");
 		System.out.println(
-				"\n====================================================================================================================");
+				"\nEsses são dados meralmente informativos.\nDIRIJA-SE ATÉ UM PROFISSIONAL DA SAÚDE PARA INFORMAÇÕES ADEQUADAS PARA VOCÊ.");
+
+		System.out.println(
+				"\n====================================================================================================================================================================");
 		System.out.println("\nObrigado por utilizar o HEALTHY DAY!");
 		System.out.println("Generation, 2022");
 		System.out.println();
