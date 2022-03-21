@@ -18,7 +18,7 @@ corpo e à alimentação.<br>A pessoa usuária insere dados como peso, altura, n
 refeições faz por dia e o sistema retorna com informações referentes à saúde da pessoa. Os dados são apenas informativos, é imprescindível a busca por profissionais da saúde!
 <br><br>
 <hr>
-<h3>EXEMPLO DE RESULTADOS APRESENTADOS:<br></h3>
+<h3>EXEMPLO DE RESULTADOS APRESENTADOS:<br></h3><br><br>
 <img src= "https://user-images.githubusercontent.com/92352134/159194395-099a280a-1a93-41df-a163-d0aae059a687.jpg" width="1000px">
 
 <hr>
