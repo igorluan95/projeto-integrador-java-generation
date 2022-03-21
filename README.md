@@ -14,7 +14,7 @@ programação Java.
 <hr>
 <h3>SOBRE O HEALTHY DAY</h3>
 <br>Pensando na ODS 3 - Saúde e Bem Estar, o Healthy Day é uma aplicação que surge para democratizar o acesso das pessoas à alguns medidores de saúde relacionados ao
-corpo e à alimentação.<br>A pessoa usuária insere dados como peso, altura, nível de atividade física, quantidade de água diariamente, quantas
+corpo e à alimentação.<p>A pessoa usuária insere dados como peso, altura, nível de atividade física, quantidade de água diariamente, quantas
 refeições faz por dia e o sistema retorna com informações referentes à saúde da pessoa. Os dados são apenas informativos, é imprescindível a busca por profissionais da saúde!
 <br><br>
 <hr>
@@ -23,7 +23,7 @@ refeições faz por dia e o sistema retorna com informações referentes à saú
 
 <hr>
 
-Tem alguma dúvida, sugestão ou crítica? Por favor, clique em algum dos ícones abaixo e entre em contato comigo.
+Tem alguma dúvida, sugestão ou crítica?<p>Por favor, clique em algum dos ícones abaixo e entre em contato comigo.
 <br><br>
       <a href = "https://www.instagram.com/igorluan95"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
       <a href = "mailto:igorluansouzasilva@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
